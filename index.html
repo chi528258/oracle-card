@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>光のオラクルカード</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- 星空 -->
+<div class="stars"></div>
+<div class="twinkle"></div>
+
+<!-- 月 -->
+<div class="moon"></div>
+
+<!-- メイン -->
+<div class="container">
+
+<h1>🌙 光のオラクルカード 🌙</h1>
+
+<p class="sub">
+心を落ち着けて、<br>
+あなたを導く一枚を選びましょう。
+</p>
+
+<!-- カード -->
+<div id="cardArea">
+
+<img
+id="oracleCard"
+class="card"
+src="images/back.png"
+alt="Oracle Card">
+
+</div>
+
+<!-- ボタン -->
+<button id="drawButton">
+カードを引く
+</button>
+
+<!-- 結果 -->
+<div id="result" class="hidden">
+
+<h2 id="cardTitle"></h2>
+
+<img
+id="resultImage"
+class="result-image"
+src=""
+alt="">
+
+<p id="message"></p>
+
+<button onclick="location.reload()">
+もう一度引く
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
