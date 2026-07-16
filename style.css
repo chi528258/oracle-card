@@ -1,234 +1,219 @@
+/* ===========================
+   光のオラクルカード
+=========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body
-    margin:0;
-    padding:0;
+body{
+
+    font-family:"Zen Old Mincho",serif;
+
+    background:url("images/sky.png") center center / cover no-repeat fixed;
+
     min-height:100vh;
-    font-family:'Zen Old Mincho', serif;
 
-    background: linear-gradient(
-        to bottom,
-        #8fd3ff 0%,
-        #bfe9ff 35%,
-        #ffe3f3 70%,
-        #ffd6ef 100%
-    );
+    display:flex;
 
-    overflow:hidden;
-    
+    justify-content:center;
+
+    align-items:center;
+
 }
 
 .container{
-    width:90%;
+
+    width:100%;
+
     max-width:500px;
+
     text-align:center;
-    padding:30px;
-    background:rgba(255,255,255,.08);
-    border-radius:25px;
-    backdrop-filter:blur(12px);
-    box-shadow:0 0 30px rgba(255,255,255,.15);
+
+    padding:30px 20px 60px;
+
 }
 
-h1{
-    font-size:32px;
-    margin-bottom:15px;
+/* タイトル画像 */
+
+.topImage{
+
+    width:320px;
+
+    max-width:90%;
+
+    display:block;
+
+    margin:0 auto 30px;
+
+    filter:drop-shadow(0 10px 20px rgba(0,0,0,.18));
+
 }
 
-.sub{
-    line-height:1.8;
-    color:#f6e8ff;
-    margin-bottom:30px;
-}
+/* カード裏 */
 
 .card{
-    width:260px;
-    border-radius:20px;
-    cursor:pointer;
-    transition:.5s;
-    box-shadow:0 15px 40px rgba(0,0,0,.4);
+
+    width:300px;
+
+    max-width:90%;
+
+    border-radius:28px;
+
+    display:block;
+
+    margin:0 auto;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
 }
 
-.card:hover{
-    transform:translateY(-8px) scale(1.03);
+/* 結果カード */
+
+.resultCard{
+
+    width:220px;
+
+    max-width:80%;
+
+    border-radius:20px;
+
+    margin:30px auto;
+
+    display:block;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.18);
+
 }
+
+/* ボタン */
 
 button{
-    margin-top:30px;
-    padding:15px 40px;
+
+    margin:35px auto;
+
+    display:block;
+
+    width:280px;
+
+    max-width:90%;
+
+    padding:18px;
+
     border:none;
-    border-radius:50px;
-    background:linear-gradient(90deg,#ff9adf,#b98cff);
+
+    border-radius:999px;
+
     color:white;
-    font-size:18px;
+
+    font-size:28px;
+
     cursor:pointer;
+
+    background:linear-gradient(90deg,#ff8dc9,#8b6dff);
+
+    box-shadow:0 8px 25px rgba(160,110,255,.35);
+
     transition:.3s;
+
 }
 
 button:hover{
-    transform:scale(1.05);
-}
 
-.result-image{
-    width:280px;
-    border-radius:20px;
-    margin:20px auto;
-    display:block;
-}
-
-.hidden{
-    display:none;
-}
-
-/* 星空 */
-
-.stars{
-    position:fixed;
-    inset:0;
-    background-image:
-    radial-gradient(white 1px,transparent 1px);
-    background-size:40px 40px;
-    opacity:.35;
-    animation:moveStars 60s linear infinite;
-    z-index:-2;
-}
-
-@keyframes moveStars{
-
-    from{
-        transform:translateY(0);
-    }
-
-    to{
-        transform:translateY(-200px);
-    }
+    transform:translateY(-3px);
 
 }
 
-/* 月 */
+/* タイトル */
 
-.moon{
+#title{
 
-    position:fixed;
+    margin-top:20px;
 
-    width:220px;
-    height:220px;
+    font-size:42px;
 
-    border-radius:50%;
+    color:#7a4db9;
 
-    background:#fff7d6;
-
-    top:40px;
-    right:60px;
-
-    filter:blur(2px);
-
-    box-shadow:0 0 80px #fff8d5;
-
-    opacity:.25;
-
-    z-index:-1;
+    font-weight:400;
 
 }
-.cloud{
-    position:absolute;
-    background:#ffd6ef;
-    border-radius:100px;
-    opacity:0.8;
-    filter:blur(8px);
-}
 
-.cloud::before,
-.cloud::after{
+/* 飾り線 */
+
+#title::after{
+
     content:"";
-    position:absolute;
-    background:#ffd6ef;
-    border-radius:50%;
+
+    display:block;
+
+    width:180px;
+
+    height:18px;
+
+    margin:15px auto 25px;
+
+    background:url("images/line.png") center/contain no-repeat;
+
 }
 
-.cloud1{
-    width:260px;
-    height:90px;
-    top:90px;
-    left:-60px;
-    animation:cloudMove 45s linear infinite;
+/* メッセージ */
+
+#message{
+
+    font-size:28px;
+
+    line-height:1.8;
+
+    color:#555;
+
+    margin:20px auto 40px;
+
+    width:90%;
+
 }
 
-.cloud1::before{
-    width:100px;
-    height:100px;
-    left:30px;
-    top:-40px;
+/* スマホ */
+
+@media(max-width:600px){
+
+.topImage{
+
+width:280px;
+
 }
 
-.cloud1::after{
-    width:120px;
-    height:120px;
-    right:25px;
-    top:-55px;
+.card{
+
+width:260px;
+
 }
 
-.cloud2{
-    width:320px;
-    height:100px;
-    top:260px;
-    right:-80px;
-    animation:cloudMove2 60s linear infinite;
+.resultCard{
+
+width:190px;
+
 }
 
-.cloud2::before{
-    width:120px;
-    height:120px;
-    left:40px;
-    top:-50px;
+button{
+
+font-size:22px;
+
+width:250px;
+
 }
 
-.cloud2::after{
-    width:140px;
-    height:140px;
-    right:30px;
-    top:-60px;
+#title{
+
+font-size:34px;
+
 }
 
-.cloud3{
-    width:280px;
-    height:95px;
-    bottom:120px;
-    left:40%;
-    animation:cloudMove 55s linear infinite;
+#message{
+
+font-size:22px;
+
 }
 
-.cloud3::before{
-    width:110px;
-    height:110px;
-    left:30px;
-    top:-45px;
-}
-
-.cloud3::after{
-    width:130px;
-    height:130px;
-    right:25px;
-    top:-55px;
-}
-
-@keyframes cloudMove{
-    0%{
-        transform:translateX(-120px);
-    }
-    100%{
-        transform:translateX(150px);
-    }
-}
-
-@keyframes cloudMove2{
-    0%{
-        transform:translateX(120px);
-    }
-    100%{
-        transform:translateX(-150px);
-    }
 }
